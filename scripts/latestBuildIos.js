@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 exec(
-  "eas build:list --distribution=simulator --status=finished --platform=ios --limit=1 --json --non-interactive > cli/buildOutput.txt",
+  "eas build:list --distribution=simulator --status=finished --platform=ios --limit=1 --json --non-interactive >> cli/buildOutput.txt",
   () => {
     fs.readFile(
       path.resolve(__dirname, "buildOutput.txt"),
