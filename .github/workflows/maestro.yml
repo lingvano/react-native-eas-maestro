@@ -14,17 +14,16 @@ jobs:
         uses: actions/checkout@v2
 
       - name: 🏗 Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: npm
 
-      - name: Setup Expo and EAS
+      - name: 🏗  Setup EAS CLI
         uses: expo/expo-github-action@v7
         with:
-          expo-version: 5.x
           eas-version: latest
-          token: ${{ secrets.EXPO_TOKEN }}
+          token: ${{ inputs.EXPO_TOKEN }}
 
       - name: get latest build
         run: |
