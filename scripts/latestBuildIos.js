@@ -9,10 +9,6 @@ exec(
       path.resolve(__dirname, "buildOutput.txt"),
       "UTF-8",
       (err, data) => {
-        console.log("test following");
-        console.log(data);
-        process.exit(0);
-
         if (err) {
           console.error(err);
           process.exit(1);
