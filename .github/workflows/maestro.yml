@@ -23,7 +23,7 @@ jobs:
         uses: expo/expo-github-action@v7
         with:
           eas-version: latest
-          token: ${{ inputs.EXPO_TOKEN }}
+          token: ${{ secrets.EXPO_TOKEN }}
 
       - name: get latest build
         run: |
