@@ -1,7 +1,7 @@
 name: CI Actions
 on:
   push:
-    branches: [master]
+    branches: [master, main]
 # concurrency:
 #   group: ci-${{ github.ref }}
 #   cancel-in-progress: true
