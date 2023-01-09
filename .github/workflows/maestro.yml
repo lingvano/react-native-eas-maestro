@@ -18,11 +18,11 @@ jobs:
       #   with:
       #     node-version: 16
 
-      # - name: get latest build
-      #   run: echo "BUILD_URL=$(node ./scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
+      - name: get latest build
+        run: echo "BUILD_URL=$(node ./scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
 
-      - name: mock save url
-        run: echo "BUILD_URL=$(echo 'https://expo.dev/artifacts/eas/cbzfHaWZCmBATr4nJRKMwW.tar.gz')" >> $GITHUB_ENV
+      # - name: mock save url
+      #   run: echo "BUILD_URL=$(echo 'https://expo.dev/artifacts/eas/cbzfHaWZCmBATr4nJRKMwW.tar.gz')" >> $GITHUB_ENV
 
       - name: download latest build
         uses: suisei-cn/actions-download-file@v1
@@ -36,8 +36,8 @@ jobs:
           ls -a
           for f in *.tar.gz; do tar -xvf "$f"; done
 
-      - uses: mobile-dev-inc/action-maestro-cloud@v1.1.1
-        with:
-          api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
-          app-file: bin/Lingvano.app
-          workspace: maestro/
+      # - uses: mobile-dev-inc/action-maestro-cloud@v1.1.1
+      #   with:
+      #     api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
+      #     app-file: bin/Lingvano.app
+      #     workspace: maestro/
