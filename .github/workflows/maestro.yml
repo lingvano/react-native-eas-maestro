@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: get latest build
-        run: echo "::set-output name=BUILD_URL::$(node cli/getLatestBuildUrl.js)"
+        run: echo "::set-output name=BUILD_URL::$(node scripts/latestBuildIos.js)"
         id: url
 
       - name: download latest build
