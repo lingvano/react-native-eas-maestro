@@ -11,8 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: get latest build
-        run: echo "BUILD_URL=$(node scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
-        id: url
+        run: echo "BUILD_URL=$(node ./scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
 
       - name: download latest build
         uses: suisei-cn/actions-download-file@v1
