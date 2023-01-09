@@ -10,6 +10,11 @@ jobs:
     name: Maestro
     runs-on: ubuntu-latest
     steps:
+      - name: 🏗 Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
       - name: get latest build
         run: echo "BUILD_URL=$(node ./scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
 
