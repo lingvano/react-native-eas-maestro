@@ -3,12 +3,14 @@ const fs = require("fs");
 const path = require("path");
 
 exec(
-  "eas build:list --distribution=simulator --status=finished --platform=ios --limit=1 --json --non-interactive >> cli/buildOutput.txt",
+  "eas build:list --distribution=simulator --status=finished --platform=ios --limit=1 --json --non-interactive > scripts/buildOutput.txt",
   () => {
     fs.readFile(
       path.resolve(__dirname, "buildOutput.txt"),
       "UTF-8",
       (err, data) => {
+        console.log(data);
+
         if (err) {
           console.error(err);
           process.exit(1);
