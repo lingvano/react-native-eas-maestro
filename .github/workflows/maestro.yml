@@ -23,7 +23,6 @@ jobs:
 
       - name: download latest build
         uses: suisei-cn/actions-download-file@v1
-        id: downloadedApp
         with:
           url: ${{ env.BUILD_URL }}
           target: bin/
