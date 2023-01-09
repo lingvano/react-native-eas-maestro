@@ -11,6 +11,7 @@ exec(
       (err, data) => {
         console.log("test following");
         console.log(data);
+        process.exit(0);
 
         if (err) {
           console.error(err);
