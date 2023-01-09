@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: get latest build
-        run: echo "::set-output name=BUILD_URL::$(node scripts/latestBuildIos.js)"
+        run: echo "BUILD_URL=$(node scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
         id: url
 
       - name: download latest build
         uses: suisei-cn/actions-download-file@v1
         id: downloadedApp
         with:
-          url: ${{ steps.url.outputs.BUILD_URL }}
+          url: ${{ env.BUILD_URL }}
           target: bin/
 
       - name: unzip latest build
