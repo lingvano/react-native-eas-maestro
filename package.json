@@ -1,0 +1,11 @@
+{
+  "name": "eas_maestro_setup",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "expo": "~47.0.8"
+  },
+  "devDependencies": {
+    "@expo/config": "^7.0.2"
+  }
+}
