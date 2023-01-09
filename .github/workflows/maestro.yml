@@ -25,10 +25,14 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
+      - name: 🚀  Send build request without submit
+        run: eas build --platform ios --non-interactive --profile development-sim
+        shell: bash
+
       - name: get latest build
+        id: retrieveUrl
         run: |
           echo "BUILD_URL=$(node ./scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
-        id: retrieveUrl
 
       - name: download latest build
         uses: suisei-cn/actions-download-file@v1
