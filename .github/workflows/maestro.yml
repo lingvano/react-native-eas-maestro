@@ -1,0 +1,33 @@
+name: CI Actions
+on:
+  push:
+    branches: [master]
+# concurrency:
+#   group: ci-${{ github.ref }}
+#   cancel-in-progress: true
+jobs:
+  maestro:
+    name: Maestro
+    runs-on: ubuntu-latest
+    steps:
+      - name: get latest build
+        run: echo "::set-output name=BUILD_URL::$(node cli/getLatestBuildUrl.js)"
+        id: url
+
+      - name: download latest build
+        uses: suisei-cn/actions-download-file@v1
+        id: downloadedApp
+        with:
+          url: ${{ steps.url.outputs.BUILD_URL }}
+          target: bin/
+
+      - name: unzip latest build
+        run: |
+          cd bin
+          ls -a
+          for f in *.tar.gz; do tar -xvf "$f"; done
+
+      - uses: mobile-dev-inc/action-maestro-cloud@v1.1.1
+        with:
+          api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
+          app-file: bin/Lingvano.app
