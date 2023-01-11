@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 exec(
-  "eas build:list --buildProfile=development-sim --distribution=internal --status=finished --platform=android --limit=1 --json --non-interactive > ./.github/scripts/buildAndroidOutput.txt",
+  "eas build:list --buildProfile=development-sim --distribution=internal --status=finished --platform=android --limit=1 --json --non-interactive > scripts/buildAndroidOutput.txt",
   () => {
     fs.readFile(
       path.resolve(__dirname, "buildAndroidOutput.txt"),
