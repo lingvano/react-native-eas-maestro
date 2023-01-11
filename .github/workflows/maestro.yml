@@ -30,12 +30,12 @@ jobs:
       #   shell: bash
 
       - name: get latest build Android
-        id: retrieveUrl
+        id: retrieveUrlAndroid
         run: |
           echo "BUILD_URL_ANDROID=$(node ./scripts/latestBuildAndroid.js)" >> $GITHUB_OUTPUT
 
       - name: get latest build
-        id: retrieveUrl
+        id: retrieveUrlIos
         run: |
           echo "BUILD_URL=$(node ./scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
 
@@ -43,14 +43,14 @@ jobs:
         id: downloadfileandroid
         uses: suisei-cn/actions-download-file@v1
         with:
-          url: ${{ steps.retrieveUrl.outputs.BUILD_URL_ANDROID }}
+          url: ${{ steps.retrieveUrlAndroid.outputs.BUILD_URL_ANDROID }}
           target: bin/
 
       - name: download latest build
         id: downloadfileios
         uses: suisei-cn/actions-download-file@v1
         with:
-          url: ${{ steps.retrieveUrl.outputs.BUILD_URL }}
+          url: ${{ steps.retrieveUrlIos.outputs.BUILD_URL }}
           target: bin/
 
       - name: unzip latest build
