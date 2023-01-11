@@ -32,7 +32,7 @@ jobs:
       - name: get latest build Android
         id: retrieveUrl
         run: |
-          echo "BUILD_URL_ANDROID=$(node ./.github/scripts/latestBuildAndroid.js)" >> $GITHUB_OUTPUT
+          echo "BUILD_URL_ANDROID=$(node ./scripts/latestBuildAndroid.js)" >> $GITHUB_OUTPUT
 
       # - name: get latest build
       #   id: retrieveUrl
