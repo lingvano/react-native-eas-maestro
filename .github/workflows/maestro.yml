@@ -34,10 +34,10 @@ jobs:
         run: |
           echo "BUILD_URL_ANDROID=$(node ./scripts/latestBuildAndroid.js)" >> $GITHUB_OUTPUT
 
-       - name: get latest build
-         id: retrieveUrl
-         run: |
-           echo "BUILD_URL=$(node ./scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
+      - name: get latest build
+        id: retrieveUrl
+        run: |
+          echo "BUILD_URL=$(node ./scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
 
       - name: download latest build Android
         id: downloadfileandroid
@@ -47,21 +47,21 @@ jobs:
           target: bin/
 
       - name: download latest build
-         id: downloadfileios
-         uses: suisei-cn/actions-download-file@v1
-         with:
-           url: ${{ steps.retrieveUrl.outputs.BUILD_URL }}
-           target: bin/
+        id: downloadfileios
+        uses: suisei-cn/actions-download-file@v1
+        with:
+          url: ${{ steps.retrieveUrl.outputs.BUILD_URL }}
+          target: bin/
 
       - name: unzip latest build
         run: tar -xvf bin/${{ steps.downloadfileios.outputs.filename }}
         shell: bash
 
-       - uses: mobile-dev-inc/action-maestro-cloud@v1.1.1
-         with:
-           api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
-           app-file: bin/${{ steps.downloadfileios.outputs.filename }}
-           workspace: maestro/
+      - uses: mobile-dev-inc/action-maestro-cloud@v1.1.1
+        with:
+          api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
+          app-file: bin/${{ steps.downloadfileios.outputs.filename }}
+          workspace: maestro/
 
       - name: upload to maestro cloud and run test ANDROID
         uses: mobile-dev-inc/action-maestro-cloud@v1.1.1
