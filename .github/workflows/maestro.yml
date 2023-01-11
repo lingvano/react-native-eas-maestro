@@ -54,7 +54,7 @@ jobs:
           target: bin/
 
       - name: unzip latest build
-        run: tar -xvf bin/${{ steps.downloadfileios.outputs.filename }}
+        run: tar -xvf bin/${{ steps.downloadfileios.outputs.filename }} -C bin/
         shell: bash
 
       - uses: mobile-dev-inc/action-maestro-cloud@v1.1.1
