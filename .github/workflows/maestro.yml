@@ -34,10 +34,10 @@ jobs:
         run: |
           echo "BUILD_URL_ANDROID=$(node ./scripts/latestBuildAndroid.js)" >> $GITHUB_OUTPUT
 
-      # - name: get latest build
-      #   id: retrieveUrl
-      #   run: |
-      #     echo "BUILD_URL=$(node ./scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
+       - name: get latest build
+         id: retrieveUrl
+         run: |
+           echo "BUILD_URL=$(node ./scripts/latestBuildIos.js)" >> $GITHUB_OUTPUT
 
       - name: download latest build Android
         id: downloadfileandroid
@@ -46,17 +46,15 @@ jobs:
           url: ${{ steps.retrieveUrl.outputs.BUILD_URL_ANDROID }}
           target: bin/
 
-      # - name: download latest build
-      #   uses: suisei-cn/actions-download-file@v1
-      #   with:
-      #     url: ${{ steps.retrieveUrl.outputs.BUILD_URL }}
-      #     target: bin/
+       - name: download latest build
+         id: downloadfileios
+         uses: suisei-cn/actions-download-file@v1
+         with:
+           url: ${{ steps.retrieveUrl.outputs.BUILD_URL }}
+           target: bin/
 
-      # - name: unzip latest build
-      #   run: |
-      #     cd bin
-      #     ls -a
-      #     for f in *.tar.gz; do tar -xvf "$f"; done
+      - name: unzip latest build
+        run: tar -xvf bin/${{ steps.downloadfileios.outputs.filename }}
 
       #  - uses: mobile-dev-inc/action-maestro-cloud@v1.1.1
       #    with:
