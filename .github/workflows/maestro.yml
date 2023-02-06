@@ -61,7 +61,7 @@ jobs:
         with:
           api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
           app-file: bin/LingvanoDEV.app
-          workspace: maestro/
+          workspace: maestro/ios-test.yaml
 
       - name: upload to maestro cloud and run test ANDROID
         uses: mobile-dev-inc/action-maestro-cloud@v1.1.1
