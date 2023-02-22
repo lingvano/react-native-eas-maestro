@@ -16,5 +16,5 @@ jobs:
         uses: ./.github/actions/eas-build
         with:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-          platform: ios
+          platform: all
           profile: development-sim
