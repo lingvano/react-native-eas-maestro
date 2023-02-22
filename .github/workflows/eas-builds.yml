@@ -1,0 +1,37 @@
+name: EAS Builds
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        type: choice
+        description: platform to build
+        options:
+          - ios
+          - android
+          - all
+        required: true
+      profile:
+        type: choice
+        description: profile to build
+        options:
+          - development
+          - development-sim
+          - preview
+          - production
+        required: true
+
+jobs:
+  eas-build:
+    name: Start build ${{ github.event.inputs.profile }}
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗  Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🚀  Start build
+        uses: ./.github/actions/eas-build
+        with:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          platform: ${{ github.event.inputs.platform }}
+          profile: ${{ github.event.inputs.profile }}

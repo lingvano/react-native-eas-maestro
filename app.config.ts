@@ -1,15 +1,18 @@
 import { ExpoConfig } from "@expo/config";
 
 const config: ExpoConfig = {
-  name: "Lingvano",
-  slug: "lingvano",
-  scheme: "lingvano",
-  owner: "lingvano",
-  version: "2.6.8",
+  name: "React Native EAS Maestro",
+  slug: "react-native-eas-maestro",
+  scheme: "react-native-eas-maestro",
+  owner: "react-native-eas-maestro",
+  version: "0.1",
   extra: {
     eas: {
-      projectId: "8a28f691-1633-48a3-aa7d-3a5b547ab7c3",
+      projectId: "633fb1eb-b210-484f-bff9-6028cbb32bf4",
     },
+  },
+  android: {
+    package: "com.reactNativeEasMaestro.app",
   },
 };
 
