@@ -64,3 +64,4 @@ dist/
 # @end expo-cli
 
 ios/
+android/
