@@ -2,10 +2,23 @@
   "name": "eas_maestro_setup",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "eas-build-on-success": "bash ./scripts/eas-build-on-success.sh",
+    "eas-build-on-error": "echo notify about failed EAS build",
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
   "dependencies": {
-    "expo": "~47.0.8"
+    "expo": "~47.0.8",
+    "expo-splash-screen": "~0.17.5",
+    "expo-status-bar": "~1.4.2",
+    "react": "18.1.0",
+    "react-native": "0.70.5"
   },
   "devDependencies": {
-    "@expo/config": "^7.0.2"
+    "@babel/core": "^7.12.9",
+    "@expo/config": "^7.0.2",
+    "@types/react-native": "^0.71.3"
   }
 }

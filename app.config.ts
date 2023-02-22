@@ -14,6 +14,9 @@ const config: ExpoConfig = {
   android: {
     package: "com.reactNativeEasMaestro.app",
   },
+  ios: {
+    bundleIdentifier: "com.reactNativeEasMaestro.app",
+  },
 };
 
 export default (): ExpoConfig => config;
