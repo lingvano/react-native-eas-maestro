@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "eas-build-on-success": "bash ./scripts/eas-build-on-success.sh",
-    "eas-build-on-error": "echo notify about failed EAS build",
+    "eas-build-on-error": "bash ./scripts/eas-build-on-error.sh",
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios"
