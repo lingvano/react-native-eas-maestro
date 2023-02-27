@@ -2,4 +2,4 @@ appId: com.reactNativeEasMaestro.app
 ---
 - launchApp:
     clearState: true
-- assertVisible: "Welcomeee"
+- assertVisible: "Welcome"
