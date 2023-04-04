@@ -8,14 +8,6 @@
       "ios": {
         "simulator": true,
         "resourceClass": "m1-medium"
-      },
-      "android": {
-        "cache": {
-          "key": "1674223825"
-        }
-      },
-      "env": {
-        "APP_VARIANT": "development"
       }
     }
   }
