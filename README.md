@@ -1,14 +1,14 @@
 # Automated E2E testing for native apps with Maestro
 
-Learn how to implement End-2-End testing for iOS and Android apps.
+Learn how to implement End-2-End testing for Expo apps with Maestro and create a GitHub CI automation.
 
-‼️
-This repository is the example code for a 5 step tutorial blog article on how to integrate native E2E testing into an react-native expo app with Maestro. Check out the full article (here)[https://medium.com/lingvano/native-e2e-testing-with-maestro-and-expo-14e9e9b0f0fe].
-‼️
+‼️‼️‼️
+
+This repository is the example code for a 5 step tutorial blog article on how to integrate native E2E testing into an react-native expo app with Maestro. Check out the full article [here](https://medium.com/lingvano/native-e2e-testing-with-maestro-and-expo-14e9e9b0f0fe).
+
+‼️‼️‼️
 
 ---
-
-In the next 5 steps, you will learn how to set up E2E testing for Expo apps with Maestro and create a GitHub CI automation.
 
 ### 1. Setup Maestro
 
@@ -154,6 +154,10 @@ Commit and push your changes again. Your pipeline will run, and after the build 
 
 Congrats! 🥳 Your app is now automatically E2E tested every time you push to your repository! Make sure to cover all your features in test flows (and use the amazing Maestro Studio for that), and you can be confident about your app working fine with every release!
 
+### Optional error notification system
+
+Add automated error notification system to notify your developers when an E2E automation has an error. Find instructions [in this article](https://medium.com/lingvano/native-e2e-testing-with-maestro-and-expo-14e9e9b0f0fe).
+
 ## Final
 
-Don't forget to check out the (blog article)[https://medium.com/lingvano/native-e2e-testing-with-maestro-and-expo-14e9e9b0f0fe] for more detailed instruction on how to set up Maestro.
+Don't forget to check out the [blog article](https://medium.com/lingvano/native-e2e-testing-with-maestro-and-expo-14e9e9b0f0fe) for more detailed instruction on how to set up Maestro.
