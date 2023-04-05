@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "@expo/config": "^7.0.2",
     "@types/react-native": "^0.71.3"
   }
 }
