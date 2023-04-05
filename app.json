@@ -2,6 +2,7 @@
   "expo": {
     "name": "React Native EAS Maestro",
     "slug": "react-native-eas-maestro",
+    "owner": "react-native-eas-maestro",
     "version": "0.1",
     "extra": {
       "eas": {
