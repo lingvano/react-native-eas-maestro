@@ -4,7 +4,7 @@ Learn how to implement End-2-End testing for Expo apps with Maestro and create a
 
 ‼️‼️‼️
 
-This repository is the example code for a 5 step tutorial blog article on how to integrate native E2E testing into an react-native expo app with Maestro. Check out the full article [here](https://medium.com/lingvano/native-e2e-testing-with-maestro-and-expo-14e9e9b0f0fe).
+This repository contains example code for a 5-step tutorial blog article, demonstrating to integrate native E2E testing into an react-native expo app with Maestro. Check out the full article [here](https://medium.com/lingvano/native-e2e-testing-with-maestro-and-expo-14e9e9b0f0fe).
 
 ‼️‼️‼️
 
